@@ -1,0 +1,6 @@
+@johns_lyng_app.Server_HostAddress = http://localhost:5042
+
+GET {{johns_lyng_app.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
