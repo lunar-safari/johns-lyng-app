@@ -12,7 +12,7 @@ import { BaseService } from 'src/app/base.service';
 
 export class TodoDataService extends BaseService {
 
-  baseUrl: string = 'https://localhost:44397/api/TodoItems';
+  baseUrl: string = '/api/TodoItems';
 
   constructor(
     private http: HttpClient,
@@ -21,7 +21,7 @@ export class TodoDataService extends BaseService {
   }
 
   getItems(): Observable<TodoItem[]> {
-    return this.http.get<TodoItem[]>(this.baseUrl)
+    return this.http.get<TodoItem[]>('/api/TodoItems')
       .pipe(catchError(this.handleError));
   }
 
@@ -33,13 +33,13 @@ export class TodoDataService extends BaseService {
       isCompleted: false
     }
 
-    return this.http.post<any>(this.baseUrl, todoItem)
+    return this.http.post<any>('/api/TodoItems', todoItem)
       .pipe(catchError(this.handleError));
   }
 
   markAsComplete(todoItem: TodoItem): Observable<any> {
     const updatedItem = { ...todoItem, isCompleted: true }; // Create a copy
-    const url = `${this.baseUrl}/${todoItem.id}`;
+    const url = `/api/TodoItems/${todoItem.id}`;
     return this.http.put(url, updatedItem);
   }
 

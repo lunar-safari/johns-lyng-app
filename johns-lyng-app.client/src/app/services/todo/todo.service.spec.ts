@@ -1,7 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { TodoDataService } from './todo-data.service';
-import { TodoItem } from '../../interfaces/todo.interface';
+import { TodoItem } from 'src/app/interfaces/app.interface';
+import { TodoDataService } from 'src/app/services/todo/todo.service';
+
 
 describe('TodoDataService', () => {
   let service: TodoDataService;
@@ -46,7 +47,7 @@ describe('TodoDataService', () => {
     });
 
     // Match the outgoing request to addItem
-    const req = httpMock.expectOne('https://localhost:44397/api/TodoItems');
+    const req = httpMock.expectOne(service.baseUrl);
     expect(req.request.method).toBe('POST');
     // Respond with mock data, simulating a successful POST request
     req.flush({

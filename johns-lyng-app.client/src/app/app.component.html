@@ -1,24 +1,84 @@
-﻿<h1 id="tableLabel">Weather forecast</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+<div class="centered-div">
 
-<table *ngIf="forecasts">
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.date }}</td>
-            <td>{{ forecast.temperatureC }}</td>
-            <td>{{ forecast.temperatureF }}</td>
-            <td>{{ forecast.summary }}</td>
-        </tr>
-    </tbody>
-</table>
+    <h1>To do list</h1>
+
+    <small>Add Item</small>
+    <mat-card appearance="outlined" class="mar-bot-20">
+        <mat-card-content>
+            <mat-form-field class="input-todo">
+                <mat-label>Add to do item</mat-label>
+                <input matInput placeholder="Enter description..." type="text" [(ngModel)]="description">
+            </mat-form-field>
+
+            <br />
+
+            <button mat-raised-button type="button" class="mar-right-10" [disabled]="!description" (click)="addItem()">
+                Add Item
+            </button>
+
+            <button mat-raised-button type="button" (click)="handleClear()">
+                Clear
+            </button>
+
+        </mat-card-content>
+    </mat-card>
+
+
+    <mat-card appearance="outlined" *ngIf="errors" class="mar-bot-20">
+        <mat-card-content>
+            <h4>Error</h4>
+            <button mat-raised-button (click)="clearError()" role="button">Clear</button>
+            <p [innerHTML]="errors"></p>
+        </mat-card-content>
+    </mat-card>
+
+
+    <small>Showing {{ items.length }} TO DO Item(s)</small>
+    <mat-card appearance="outlined" class="mar-bot-20">
+        <mat-card-content>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Description</th>
+                        <th class="action-width">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items">
+                        <td><small>{{ item.id }}</small></td>
+                        <td>{{ item.description }}</td>
+                        <td>
+                            <button mat-raised-button (click)="markAsComplete(item)">
+                                Completed
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-card-content>
+    </mat-card>
+
+    <small>Showing {{ completedItems.length }} completed TO DO Item(s)</small>
+    <mat-card appearance="outlined" class="mar-bot-20">
+        <mat-card-content>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of completedItems">
+                        <td><small>{{ item.id }}</small></td>
+                        <td>{{ item.description }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-card-content>
+    </mat-card>
+
+</div>

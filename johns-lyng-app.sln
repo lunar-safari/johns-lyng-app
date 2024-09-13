@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "johns-lyng-app.Server", "johns-lyng-app.Server\johns-lyng-app.Server.csproj", "{7197F820-DE74-491B-A008-D9C061E84B5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "johns-lyng-app.Server", "johns-lyng-app.Server\johns-lyng-app.Server.csproj", "{7197F820-DE74-491B-A008-D9C061E84B5B}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "johns-lyng-app.client", "johns-lyng-app.client\johns-lyng-app.client.esproj", "{D06FBABD-CF14-4DDA-ABFE-A3C157CCB936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "johns-lyng-app.tests", "johns-lyng-app.tests\johns-lyng-app.tests.csproj", "{3F940CE0-A1D5-47B7-97DD-E513313F7F47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{D06FBABD-CF14-4DDA-ABFE-A3C157CCB936}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D06FBABD-CF14-4DDA-ABFE-A3C157CCB936}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D06FBABD-CF14-4DDA-ABFE-A3C157CCB936}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3F940CE0-A1D5-47B7-97DD-E513313F7F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F940CE0-A1D5-47B7-97DD-E513313F7F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F940CE0-A1D5-47B7-97DD-E513313F7F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F940CE0-A1D5-47B7-97DD-E513313F7F47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

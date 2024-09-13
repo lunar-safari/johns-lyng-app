@@ -1,10 +1,6 @@
 ﻿using johns_lyng_app.Server.Interface;
 using johns_lyng_app.Server.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Threading.Tasks;
-
 
 namespace johns_lyng_app.Server.Controllers
 {

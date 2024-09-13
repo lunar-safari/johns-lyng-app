@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mar-bot-20 {
+    margin-bottom:20px;
+}
+
+.mar-right-10 {
+  margin-right:10px;
+}
+
+.centered-div {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.input-todo {
+    width:400px;
+}
