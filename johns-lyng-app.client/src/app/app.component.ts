@@ -64,6 +64,5 @@ export class AppComponent implements OnInit {
   clearError() {
     this.errors = '';
   }
-
-  title = 'johns-lyng-app.client';
+  
 }
